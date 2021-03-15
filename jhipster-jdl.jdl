@@ -1,0 +1,41 @@
+entity NameBasics {
+	primaryName String,
+    birthYear Long,
+    deathYear Long,
+    primaryProfession String,
+    knownForTitles String
+}
+entity TitlePrincipals {
+	category String,
+    job String,
+    characters String
+}
+entity TitleBasics {
+	titleType String,
+    primaryTitle String,
+    originalTitle String,
+    isAdult Boolean,
+    startYear Long,
+    endYear Long,
+    runTimeMinutes Long,
+    genres String
+}
+
+entity TitleRatings {
+    numvotes Long,
+    averageRating Float
+}
+
+entity TitleCrew {
+    directors String,
+    writers String
+}
+
+// defining multiple OneToMany relationships with comments
+relationship OneToMany {
+	TitleBasics to TitleCrew{titleBasics},
+    TitleBasics to TitleRatings{titleBasics},
+    TitleBasics to TitlePrincipals{titleBasics},
+    NameBasics to TitlePrincipals{titleBasics}
+}
+
