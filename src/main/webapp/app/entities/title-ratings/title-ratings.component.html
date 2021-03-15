@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="netzonApp.titleRatings.home.title">Title Ratings</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-title-ratings" [routerLink]="['/title-ratings/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="netzonApp.titleRatings.home.createLabel">
+            Create a new Title Ratings
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="titleRatings?.length === 0">
+        <span jhiTranslate="netzonApp.titleRatings.home.notFound">No titleRatings found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="titleRatings && titleRatings.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleRatings.numvotes">Numvotes</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleRatings.averageRating">Average Rating</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleRatings.titleBasics">Title Basics</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let titleRatings of titleRatings ;trackBy: trackId">
+                    <td><a [routerLink]="['/title-ratings', titleRatings.id, 'view']">{{ titleRatings.id }}</a></td>
+                    <td>{{ titleRatings.numvotes }}</td>
+                    <td>{{ titleRatings.averageRating }}</td>
+                    <td>
+                        <div *ngIf="titleRatings.titleBasics">
+                            <a [routerLink]="['/title-basics', titleRatings.titleBasics?.id, 'view']" >{{ titleRatings.titleBasics?.id }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/title-ratings', titleRatings.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/title-ratings', titleRatings.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(titleRatings)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

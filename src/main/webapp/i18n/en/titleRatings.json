@@ -1,0 +1,24 @@
+{
+  "netzonApp": {
+    "titleRatings": {
+      "home": {
+        "title": "Title Ratings",
+        "createLabel": "Create a new Title Ratings",
+        "createOrEditLabel": "Create or edit a Title Ratings",
+        "notFound": "No Title Ratings found"
+      },
+      "created": "A new Title Ratings is created with identifier {{ param }}",
+      "updated": "A Title Ratings is updated with identifier {{ param }}",
+      "deleted": "A Title Ratings is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Title Ratings {{ id }}?"
+      },
+      "detail": {
+        "title": "Title Ratings"
+      },
+      "numvotes": "Numvotes",
+      "averageRating": "Average Rating",
+      "titleBasics": "Title Basics"
+    }
+  }
+}

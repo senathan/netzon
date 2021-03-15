@@ -1,0 +1,40 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="titleRatings">
+            <h2><span jhiTranslate="netzonApp.titleRatings.detail.title">Title Ratings</span> {{ titleRatings.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="netzonApp.titleRatings.numvotes">Numvotes</span></dt>
+                <dd>
+                    <span>{{ titleRatings.numvotes }}</span>
+                </dd>
+                <dt><span jhiTranslate="netzonApp.titleRatings.averageRating">Average Rating</span></dt>
+                <dd>
+                    <span>{{ titleRatings.averageRating }}</span>
+                </dd>
+                <dt><span jhiTranslate="netzonApp.titleRatings.titleBasics">Title Basics</span></dt>
+                <dd>
+                    <div *ngIf="titleRatings.titleBasics">
+                        <a [routerLink]="['/title-basics', titleRatings.titleBasics?.id, 'view']">{{ titleRatings.titleBasics?.id }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/title-ratings', titleRatings.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

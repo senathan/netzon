@@ -1,0 +1,24 @@
+{
+  "netzonApp": {
+    "titleCrew": {
+      "home": {
+        "title": "Title Crews",
+        "createLabel": "Create a new Title Crew",
+        "createOrEditLabel": "Create or edit a Title Crew",
+        "notFound": "No Title Crews found"
+      },
+      "created": "A new Title Crew is created with identifier {{ param }}",
+      "updated": "A Title Crew is updated with identifier {{ param }}",
+      "deleted": "A Title Crew is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Title Crew {{ id }}?"
+      },
+      "detail": {
+        "title": "Title Crew"
+      },
+      "directors": "Directors",
+      "writers": "Writers",
+      "titleBasics": "Title Basics"
+    }
+  }
+}

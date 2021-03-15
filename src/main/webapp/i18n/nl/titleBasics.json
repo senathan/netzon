@@ -1,0 +1,32 @@
+{
+  "netzonApp": {
+    "titleBasics": {
+      "home": {
+        "title": "Title Basics",
+        "createLabel": "Maak een nieuwe Title Basics",
+        "createOrEditLabel": "Maak of wijzig een Title Basics",
+        "notFound": "No Title Basics found"
+      },
+      "created": "A new Title Basics is created with identifier {{ param }}",
+      "updated": "A Title Basics is updated with identifier {{ param }}",
+      "deleted": "A Title Basics is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Title Basics {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Title Basics"
+      },
+      "titleType": "Title Type",
+      "primaryTitle": "Primary Title",
+      "originalTitle": "Original Title",
+      "isAdult": "Is Adult",
+      "startYear": "Start Year",
+      "endYear": "End Year",
+      "runTimeMinutes": "Run Time Minutes",
+      "genres": "Genres",
+      "titleCrew": "Title Crew",
+      "titleRatings": "Title Ratings",
+      "titlePrincipals": "Title Principals"
+    }
+  }
+}

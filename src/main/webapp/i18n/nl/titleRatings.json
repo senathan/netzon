@@ -1,0 +1,24 @@
+{
+  "netzonApp": {
+    "titleRatings": {
+      "home": {
+        "title": "Title Ratings",
+        "createLabel": "Maak een nieuwe Title Ratings",
+        "createOrEditLabel": "Maak of wijzig een Title Ratings",
+        "notFound": "No Title Ratings found"
+      },
+      "created": "A new Title Ratings is created with identifier {{ param }}",
+      "updated": "A Title Ratings is updated with identifier {{ param }}",
+      "deleted": "A Title Ratings is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Bent u zeker dat u Title Ratings {{ id }} wilt verwijderen?"
+      },
+      "detail": {
+        "title": "Title Ratings"
+      },
+      "numvotes": "Numvotes",
+      "averageRating": "Average Rating",
+      "titleBasics": "Title Basics"
+    }
+  }
+}

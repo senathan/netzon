@@ -1,0 +1,46 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="nameBasics">
+            <h2><span jhiTranslate="netzonApp.nameBasics.detail.title">Name Basics</span> {{ nameBasics.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="netzonApp.nameBasics.primaryName">Primary Name</span></dt>
+                <dd>
+                    <span>{{ nameBasics.primaryName }}</span>
+                </dd>
+                <dt><span jhiTranslate="netzonApp.nameBasics.birthYear">Birth Year</span></dt>
+                <dd>
+                    <span>{{ nameBasics.birthYear }}</span>
+                </dd>
+                <dt><span jhiTranslate="netzonApp.nameBasics.deathYear">Death Year</span></dt>
+                <dd>
+                    <span>{{ nameBasics.deathYear }}</span>
+                </dd>
+                <dt><span jhiTranslate="netzonApp.nameBasics.primaryProfession">Primary Profession</span></dt>
+                <dd>
+                    <span>{{ nameBasics.primaryProfession }}</span>
+                </dd>
+                <dt><span jhiTranslate="netzonApp.nameBasics.knownForTitles">Known For Titles</span></dt>
+                <dd>
+                    <span>{{ nameBasics.knownForTitles }}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/name-basics', nameBasics.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,15 @@
+{
+  "home": {
+    "title": "Welcome, Netzon Movies!",
+    "subtitle": "This is your homepage",
+    "logged": {
+      "message": "You are logged in as user \"{{username}}\"."
+    },
+    "link": {
+      "homepage": "Netzon homepage",
+      "chat": "Netzon public chat room",
+      "follow": "follow @imdb on Twitter"
+    },
+    "like": "If you like Netzon movies, don't forget to give us a star on"
+  }
+}

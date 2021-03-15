@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-title-basics-heading" jhiTranslate="netzonApp.titleBasics.home.createOrEditLabel">Create or edit a Title Basics</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netzonApp.titleBasics.titleType" for="field_titleType">Title Type</label>
+                    <input type="text" class="form-control" name="titleType" id="field_titleType"
+                           formControlName="titleType"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netzonApp.titleBasics.primaryTitle" for="field_primaryTitle">Primary Title</label>
+                    <input type="text" class="form-control" name="primaryTitle" id="field_primaryTitle"
+                           formControlName="primaryTitle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netzonApp.titleBasics.originalTitle" for="field_originalTitle">Original Title</label>
+                    <input type="text" class="form-control" name="originalTitle" id="field_originalTitle"
+                           formControlName="originalTitle"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netzonApp.titleBasics.isAdult" for="field_isAdult">Is Adult</label>
+                    <input type="checkbox" class="form-control" name="isAdult" id="field_isAdult"
+                           formControlName="isAdult"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netzonApp.titleBasics.startYear" for="field_startYear">Start Year</label>
+                    <input type="number" class="form-control" name="startYear" id="field_startYear"
+                           formControlName="startYear"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netzonApp.titleBasics.endYear" for="field_endYear">End Year</label>
+                    <input type="number" class="form-control" name="endYear" id="field_endYear"
+                           formControlName="endYear"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netzonApp.titleBasics.runTimeMinutes" for="field_runTimeMinutes">Run Time Minutes</label>
+                    <input type="number" class="form-control" name="runTimeMinutes" id="field_runTimeMinutes"
+                           formControlName="runTimeMinutes"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="netzonApp.titleBasics.genres" for="field_genres">Genres</label>
+                    <input type="text" class="form-control" name="genres" id="field_genres"
+                           formControlName="genres"/>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

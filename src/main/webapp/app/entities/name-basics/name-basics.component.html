@@ -1,0 +1,69 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="netzonApp.nameBasics.home.title">Name Basics</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-name-basics" [routerLink]="['/name-basics/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="netzonApp.nameBasics.home.createLabel">
+            Create a new Name Basics
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="nameBasics?.length === 0">
+        <span jhiTranslate="netzonApp.nameBasics.home.notFound">No nameBasics found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="nameBasics && nameBasics.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.nameBasics.primaryName">Primary Name</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.nameBasics.birthYear">Birth Year</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.nameBasics.deathYear">Death Year</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.nameBasics.primaryProfession">Primary Profession</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.nameBasics.knownForTitles">Known For Titles</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let nameBasics of nameBasics ;trackBy: trackId">
+                    <td><a [routerLink]="['/name-basics', nameBasics.id, 'view']">{{ nameBasics.id }}</a></td>
+                    <td>{{ nameBasics.primaryName }}</td>
+                    <td>{{ nameBasics.birthYear }}</td>
+                    <td>{{ nameBasics.deathYear }}</td>
+                    <td>{{ nameBasics.primaryProfession }}</td>
+                    <td>{{ nameBasics.knownForTitles }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/name-basics', nameBasics.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/name-basics', nameBasics.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(nameBasics)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,26 @@
+{
+  "netzonApp": {
+    "titlePrincipals": {
+      "home": {
+        "title": "Title Principals",
+        "createLabel": "Create a new Title Principals",
+        "createOrEditLabel": "Create or edit a Title Principals",
+        "notFound": "No Title Principals found"
+      },
+      "created": "A new Title Principals is created with identifier {{ param }}",
+      "updated": "A Title Principals is updated with identifier {{ param }}",
+      "deleted": "A Title Principals is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Title Principals {{ id }}?"
+      },
+      "detail": {
+        "title": "Title Principals"
+      },
+      "category": "Category",
+      "job": "Job",
+      "characters": "Characters",
+      "titleBasics": "Title Basics",
+      "titleBasics": "Title Basics"
+    }
+  }
+}

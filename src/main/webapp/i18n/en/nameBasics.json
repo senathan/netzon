@@ -1,0 +1,27 @@
+{
+  "netzonApp": {
+    "nameBasics": {
+      "home": {
+        "title": "Name Basics",
+        "createLabel": "Create a new Name Basics",
+        "createOrEditLabel": "Create or edit a Name Basics",
+        "notFound": "No Name Basics found"
+      },
+      "created": "A new Name Basics is created with identifier {{ param }}",
+      "updated": "A Name Basics is updated with identifier {{ param }}",
+      "deleted": "A Name Basics is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Name Basics {{ id }}?"
+      },
+      "detail": {
+        "title": "Name Basics"
+      },
+      "primaryName": "Primary Name",
+      "birthYear": "Birth Year",
+      "deathYear": "Death Year",
+      "primaryProfession": "Primary Profession",
+      "knownForTitles": "Known For Titles",
+      "titlePrincipals": "Title Principals"
+    }
+  }
+}

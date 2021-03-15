@@ -1,0 +1,75 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="netzonApp.titleBasics.home.title">Title Basics</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-title-basics" [routerLink]="['/title-basics/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="netzonApp.titleBasics.home.createLabel">
+            Create a new Title Basics
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="titleBasics?.length === 0">
+        <span jhiTranslate="netzonApp.titleBasics.home.notFound">No titleBasics found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="titleBasics && titleBasics.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr>
+                    <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleBasics.titleType">Title Type</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleBasics.primaryTitle">Primary Title</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleBasics.originalTitle">Original Title</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleBasics.isAdult">Is Adult</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleBasics.startYear">Start Year</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleBasics.endYear">End Year</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleBasics.runTimeMinutes">Run Time Minutes</span></th>
+                    <th scope="col" ><span jhiTranslate="netzonApp.titleBasics.genres">Genres</span></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let titleBasics of titleBasics ;trackBy: trackId">
+                    <td><a [routerLink]="['/title-basics', titleBasics.id, 'view']">{{ titleBasics.id }}</a></td>
+                    <td>{{ titleBasics.titleType }}</td>
+                    <td>{{ titleBasics.primaryTitle }}</td>
+                    <td>{{ titleBasics.originalTitle }}</td>
+                    <td>{{ titleBasics.isAdult }}</td>
+                    <td>{{ titleBasics.startYear }}</td>
+                    <td>{{ titleBasics.endYear }}</td>
+                    <td>{{ titleBasics.runTimeMinutes }}</td>
+                    <td>{{ titleBasics.genres }}</td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/title-basics', titleBasics.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/title-basics', titleBasics.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(titleBasics)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
